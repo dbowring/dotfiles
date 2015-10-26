@@ -24,7 +24,7 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 
-`cat vundle.vimrc`
+`cat $(dirname $0)/vundle.vimrc`
 
 call vundle#end()
 
@@ -38,7 +38,7 @@ vim +PluginInstall +qall
 
 
 echo "VIM: Updating .vimrc"
-cat options.vimrc >> ${HOME}/.vimrc
+cat $(dirname $0)/options.vimrc >> ${HOME}/.vimrc
 
 echo "VIM: You may need to install a compatible font for vim powerline"
 echo "VIM: Try https://github.com/powerline/fonts/tree/master/DejaVuSansMono"
