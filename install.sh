@@ -1,4 +1,3 @@
-
 sudo --reset-timestamp
 
 sudo apt-get update
@@ -10,7 +9,6 @@ sudo apt-get install python-pip openssh-server -y
 
 ./setup/install-vim.sh
 ./setup/setup-git.sh
+./setup/setup-tmux.sh
 ./setup/setup-keys.sh
-
-
 
