@@ -1,0 +1,26 @@
+#Find In Files
+fif_fn() {
+  grep -rnwi $1 -e $2
+}
+alias fif=fif_fn
+
+# "Un MoVe"
+umv_fn() {
+  mv $2 $1
+}
+alias umv=umv_fn
+
+# CoPy, then edit with VIM
+cpvim_fn() {
+  cp $1 $2
+  vim $2
+}
+alias cpvim=cpvim_fn
+
+# CoPy, and then EDit
+cped_fn() {
+  cp $1 $2
+  /usr/bin/editor $2
+}
+alias cped=cped_fn
+

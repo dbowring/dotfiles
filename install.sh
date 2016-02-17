@@ -7,6 +7,7 @@ sudo apt-get install tmux git -y
 sudo apt-get install python-pip openssh-server -y
 
 
+./setup/install-bash.sh
 ./setup/install-vim.sh
 ./setup/setup-git.sh
 ./setup/setup-tmux.sh
