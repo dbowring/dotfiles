@@ -15,10 +15,10 @@ if ! zgen saved; then
   zgen oh-my-zsh plugins/rustup
   zgen oh-my-zsh plugins/sudo
 
-  zgen load zsh-users/zsh-autosuggestions
+  # zgen load zsh-users/zsh-autosuggestions
   zgen load zsh-users/zsh-completions src
   # zgen load zsh-users/zsh-history-substring-search
-  zgen load zsh-users/zsh-syntax-highlighting
+  # zgen load zsh-users/zsh-syntax-highlighting
   
   zgen load caiogondim/bullet-train-oh-my-zsh-theme bullet-train
 
