@@ -124,6 +124,16 @@ dotfiles_alacritty() {
 
 }
 
+dotfiles_subl() {
+    conf_dir="$HOME/.config/sublime-text-3/Packages/User/"
+
+    if [[ ! -d "$conf_dir" ]]; then
+        mkdir -p "$conf_dir"
+    fi
+
+    dotfiles_copy_prompt "$SOURCE_DIR" "$conf_dir" Preferences.sublime-settings
+}
+
 assert_command_available diff
 assert_command_available dirname
 assert_command_available find
@@ -132,6 +142,7 @@ assert_command_available git
 assert_command_available tmux
 assert_command_available alacritty
 assert_command_available vim
+assert_command_available subl
 
 check_optional_command exa
 check_optional_command bat
@@ -146,4 +157,5 @@ source "$SOURCE_DIR/zsh/.zshenv"
 dotfiles_zsh
 dotfiles_tmux
 dotfiles_alacritty
+dotfiles_subl
 dotfiles_showmessage Complete!
