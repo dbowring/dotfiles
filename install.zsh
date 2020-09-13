@@ -125,6 +125,7 @@ assert_command_available realpath
 assert_command_available git
 assert_command_available tmux
 assert_command_available alacritty
+assert_command_available vim
 
 assert_font_available 'Hack:style=Regular'
 

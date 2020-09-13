@@ -27,3 +27,5 @@ export BULLETTRAIN_PROMPT_ORDER=(
     cmd_exec_time
     status
 )
+
+export EDITOR=$(command -v vim)
