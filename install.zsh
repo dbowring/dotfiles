@@ -10,6 +10,13 @@ assert_command_available() {
 	fi
 }
 
+assert_font_available() {
+	if ! (fc-list | grep $1 > /dev/null); then
+		echo Missing font $1
+		exit 1
+	fi
+}
+
 dotfiles_showmessage() {
 	echo DOTFILES: $@
 }
@@ -100,10 +107,27 @@ dotfiles_tmux() {
 	dotfiles_copy_prompt "$SOURCE_DIR" "$tmux_conf_dir" tmux.conf
 }
 
+dotfiles_alacritty() {
+	conf_dir="$HOME/.config/alacritty"
+
+	if [[ ! -d "$conf_dir" ]]; then
+		mkdir -p "$conf_dir"
+	fi
+
+	dotfiles_copy_prompt "$SOURCE_DIR" "$conf_dir" alacritty.yml
+
+}
+
 assert_command_available diff
 assert_command_available dirname
 assert_command_available find
 assert_command_available realpath
+assert_command_available git
+assert_command_available tmux
+assert_command_available alacritty
+
+assert_font_available 'Hack:style=Regular'
+
 
 INSTALL_SCRIPT_PATH=$0:A
 SOURCE_DIR=$(dirname $INSTALL_SCRIPT_PATH)
@@ -111,4 +135,5 @@ source "$SOURCE_DIR/zsh/.zshenv"
 
 dotfiles_zsh
 dotfiles_tmux
+dotfiles_alacritty
 dotfiles_showmessage Complete!
