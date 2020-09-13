@@ -5,21 +5,21 @@ set -euo pipefail
 
 assert_command_available() {
 	if ! type $1 > /dev/null; then
-		echo Missing \'$1\' command >&2 
+		dotfiles_showmessage Missing \'$1\' command >&2
 		exit 1
 	fi
 }
 
 assert_font_available() {
 	if ! (fc-list | grep $1 > /dev/null); then
-		echo Missing font $1
+		dotfiles_showmessage Missing font $1
 		exit 1
 	fi
 }
 
 check_optional_command() {
 	if ! type $1 > /dev/null; then
-		echo Missing optional extra \'$1\' >&2
+		dotfiles_showmessage Missing optional extra \'$1\' >&2
 	fi
 }
 
