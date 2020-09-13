@@ -17,6 +17,12 @@ assert_font_available() {
 	fi
 }
 
+check_optional_command() {
+	if ! type $1 > /dev/null; then
+		echo Missing optional extra \'$1\' >&2
+	fi
+}
+
 dotfiles_showmessage() {
 	echo DOTFILES: $@
 }
@@ -126,6 +132,9 @@ assert_command_available git
 assert_command_available tmux
 assert_command_available alacritty
 assert_command_available vim
+
+check_optional_command exa
+check_optional_command bat
 
 assert_font_available 'Hack:style=Regular'
 
