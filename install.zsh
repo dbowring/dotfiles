@@ -124,6 +124,26 @@ dotfiles_alacritty() {
 
 }
 
+dotfiles_vim() {
+    conf_dir="$XDG_CONFIG_HOME/vim"
+    if [[ -f "$HOME/.vimrc" ]]; then
+        dotfiles_showmessage 'You must remove ~/.vimrc'
+        dotfiles_showmessage If you want to keep it, move it to $conf_dir/vim/vimrc
+        exit 1
+    fi
+
+    mkdir -p "$XDG_DATA_HOME"/vim/{undo,swap,backup}
+
+    if [[ ! -f "$conf_dir/autoload/plug.vim" ]]; then
+        curl -fLo "$conf_dir/autoload/plug.vim" --create-dirs \
+            https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    fi
+
+    dotfiles_copy_prompt "$SOURCE_DIR" "$conf_dir" vimrc
+    dotfiles_showmessage Installing vim plugins...
+    vim +PlugInstall +qall
+}
+
 dotfiles_subl() {
     conf_dir="$HOME/.config/sublime-text-3/Packages/User/"
 
@@ -139,6 +159,7 @@ assert_command_available dirname
 assert_command_available find
 assert_command_available realpath
 assert_command_available git
+assert_command_available curl
 assert_command_available tmux
 assert_command_available alacritty
 assert_command_available vim
@@ -157,5 +178,6 @@ source "$SOURCE_DIR/zsh/.zshenv"
 dotfiles_zsh
 dotfiles_tmux
 dotfiles_alacritty
+dotfiles_vim
 dotfiles_subl
 dotfiles_showmessage Complete!

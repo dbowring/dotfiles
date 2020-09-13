@@ -29,3 +29,4 @@ export BULLETTRAIN_PROMPT_ORDER=(
 )
 
 export EDITOR=$(command -v vim)
+export VIMINIT='exe "source" "$XDG_CONFIG_HOME/vim/vimrc"'
