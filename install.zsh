@@ -38,15 +38,39 @@ dotfiles_copy_prompt() {
     if [[ ! -f "$outpath" ]]; then
         dotfiles_showmessage new file: $relative_path
         # Using `cp -i` because I'm paranoid
-        cp -i "$inpath" "$outpath"
+        cp -i "$inpath" "$outpath" || true
     else
         if (diff --color -u --label existing/$relative_path --label new/$relative_path "$outpath" "$inpath"); then
             dotfiles_showmessage unchanged: $relative_path
         else
             dotfiles_showmessage modified: $relative_path
-            cp -i "$inpath" "$outpath"
+            cp -i "$inpath" "$outpath" || true
         fi
     fi
+}
+
+dotfile_copy_template_prompt() {
+    indir=$1
+    outdir=$2
+    relative_path=$3
+    template_path=$indir/$relative_path.tmpl
+    render_path=$indir/$relative_path
+
+    if [[ ! -f "$template_path" ]]; then
+        dotfiles_showmessage missing template $template_path
+        exit 1
+    fi
+
+    if [[ -f "$render_path" ]]; then
+        dotfiles_showmessage rendering $template_path would overwrite $render_path
+        exit 1
+    fi
+
+
+    template_vars='$ZSH_FULL_NAME:$TMUX_FULL_NAME:$TMUX_SESSION_NAME:$ALACRITTY_FONT_SIZE:$HOME'
+    envsubst "$template_vars" < $template_path > $render_path
+    dotfiles_copy_prompt "$indir" "$outdir" "$relative_path"
+    rm "$render_path"
 }
 
 dotfiles_clone_or_pull() {
@@ -110,7 +134,7 @@ dotfiles_tmux() {
     fi
 
     dotfiles_showmessage Copying tmux config to $tmux_conf_dir
-    dotfiles_copy_prompt "$SOURCE_DIR" "$tmux_conf_dir" tmux.conf
+    dotfile_copy_template_prompt "$SOURCE_DIR" "$tmux_conf_dir" tmux.conf
 }
 
 dotfiles_alacritty() {
@@ -120,7 +144,7 @@ dotfiles_alacritty() {
         mkdir -p "$conf_dir"
     fi
 
-    dotfiles_copy_prompt "$SOURCE_DIR" "$conf_dir" alacritty.yml
+    dotfile_copy_template_prompt "$SOURCE_DIR" "$conf_dir" alacritty.yml
 
 }
 
@@ -154,17 +178,18 @@ dotfiles_subl() {
     dotfiles_copy_prompt "$SOURCE_DIR" "$conf_dir" Preferences.sublime-settings
 }
 
+assert_command_available alacritty
+assert_command_available curl
 assert_command_available diff
 assert_command_available dirname
+assert_command_available envsubst
 assert_command_available find
-assert_command_available realpath
 assert_command_available git
-assert_command_available curl
+assert_command_available realpath
 assert_command_available tmux
-assert_command_available alacritty
 assert_command_available vim
-assert_command_available subl
 
+# check_optional_command subl
 check_optional_command exa
 check_optional_command bat
 
@@ -175,9 +200,16 @@ INSTALL_SCRIPT_PATH=$0:A
 SOURCE_DIR=$(dirname $INSTALL_SCRIPT_PATH)
 source "$SOURCE_DIR/zsh/.zshenv"
 
-dotfiles_zsh
-dotfiles_tmux
+# Add variables for templates
+if [[ -f "$SOURCE_DIR/config.zsh" ]]; then
+    source "$SOURCE_DIR/config.zsh"
+else
+    source "$SOURCE_DIR/default-config.zsh"
+fi
+
+# dotfiles_zsh
+# dotfiles_tmux
 dotfiles_alacritty
-dotfiles_vim
-dotfiles_subl
+# dotfiles_vim
+# dotfiles_subl
 dotfiles_showmessage Complete!

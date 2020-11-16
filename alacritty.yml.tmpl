@@ -8,7 +8,7 @@ scrolling:
   history: 0
 
 font:
-  size: 11
+  size: $ALACRITTY_FONT_SIZE
 
   normal:
     family: Hack
@@ -96,13 +96,15 @@ cursor:
 live_config_reload: true
 
 shell:
-  program: /usr/bin/tmux
+  program: $TMUX_FULL_NAME
   args:
     - -u
+    - new
+    - -A
+    - -s
+    - '$TMUX_SESSION_NAME'
 
-# Would prefer this to be explicitly the home directory, but `~` or `$HOME`
-# are not expanded when loading the config
-# working_directory: ~
+working_directory: $HOME
 
 alt_send_esc: true
 
