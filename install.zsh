@@ -193,7 +193,7 @@ assert_command_available vim
 check_optional_command exa
 check_optional_command bat
 
-assert_font_available 'Hack:style=Regular'
+assert_font_available 'Fira Code:style=Regular'
 
 
 INSTALL_SCRIPT_PATH=$0:A
