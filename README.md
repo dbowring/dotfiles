@@ -31,6 +31,7 @@ your system.
 
 
 * Install the requirements, and the programs to be configured
+* Create and edit `config.zsh` if desired (`cp default-config.zsh config.zsh`)
 * Run the installation script
 
 ```zsh
