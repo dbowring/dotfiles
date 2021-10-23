@@ -137,6 +137,11 @@ dotfiles_tmux() {
     dotfile_copy_template_prompt "$SOURCE_DIR" "$tmux_conf_dir" tmux.conf
 }
 
+dotfiles_starship() {
+    dotfiles_showmessage Copying starship config to $XDG_CONFIG_HOME
+    dotfiles_copy_prompt "$SOURCE_DIR" "$XDG_CONFIG_HOME" starship.toml
+}
+
 dotfiles_alacritty() {
     conf_dir="$HOME/.config/alacritty"
 
@@ -188,6 +193,7 @@ assert_command_available git
 assert_command_available realpath
 assert_command_available tmux
 assert_command_available vim
+assert_command_available starship
 
 # check_optional_command subl
 check_optional_command exa
@@ -207,9 +213,10 @@ else
     source "$SOURCE_DIR/default-config.zsh"
 fi
 
-# dotfiles_zsh
-# dotfiles_tmux
+dotfiles_zsh
+dotfiles_tmux
+dotfiles_starship
 dotfiles_alacritty
-# dotfiles_vim
-# dotfiles_subl
+dotfiles_vim
+dotfiles_subl
 dotfiles_showmessage Complete!

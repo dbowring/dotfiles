@@ -1,25 +1,13 @@
-source $ZGEN_DIR/zgen.zsh
 
-if ! zgen saved; then
-  zgen oh-my-zsh
-  zgen oh-my-zsh plugins/archlinux
-  zgen oh-my-zsh plugins/cargo
-  zgen oh-my-zsh plugins/command-not-found
-  zgen oh-my-zsh plugins/docker
-  zgen oh-my-zsh plugins/docker-compose
-  zgen oh-my-zsh plugins/history-substring-search
-  zgen oh-my-zsh plugins/npm
-  zgen oh-my-zsh plugins/nvm
-  zgen oh-my-zsh plugins/pip
-  zgen oh-my-zsh plugins/rust
-  zgen oh-my-zsh plugins/rustup
-  zgen oh-my-zsh plugins/sudo
+plugins=(
+    /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+    /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+    /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+);
 
-  # zgen load zsh-users/zsh-autosuggestions
-  zgen load zsh-users/zsh-completions src
-  # zgen load zsh-users/zsh-history-substring-search
-  # zgen load zsh-users/zsh-syntax-highlighting
-  zgen load caiogondim/bullet-train-oh-my-zsh-theme bullet-train
+for plugin in $plugins; do
+    source "$plugin"
+done
 
-  zgen save
-fi
+# zsh-completions is also recommended (typically automatically added to fpath
+# by package manager)

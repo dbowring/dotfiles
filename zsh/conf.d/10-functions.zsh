@@ -1,3 +1,2 @@
-autoload -Uz compinit compaudit history-search-end promptinit
+autoload -Uz compinit compaudit history-search-end
 compinit
-promptinit

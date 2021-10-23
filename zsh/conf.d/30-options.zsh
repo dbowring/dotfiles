@@ -5,7 +5,7 @@ bindkey -e
 
 # If a new command line being added to the history list duplicates an older
 # one, the older command is removed from the list (even if it is not the 
-# previous event). 
+# previous event).
 setopt HIST_IGNORE_ALL_DUPS
 
 # This option both imports new commands from the history file, and also causes
@@ -19,7 +19,7 @@ setopt HIST_IGNORE_SPACE
 # Save each command’s beginning timestamp and the duration the history file
 setopt EXTENDED_HISTORY
 
-# Automatically list choices on an ambiguous completion. 
+# Automatically list choices on an ambiguous completion.
 setopt AUTO_LIST
 
 # Automatically use menu completion after the second consecutive request for
