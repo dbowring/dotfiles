@@ -173,16 +173,6 @@ dotfiles_vim() {
     vim +PlugInstall +qall
 }
 
-dotfiles_subl() {
-    conf_dir="$HOME/.config/sublime-text-3/Packages/User/"
-
-    if [[ ! -d "$conf_dir" ]]; then
-        mkdir -p "$conf_dir"
-    fi
-
-    dotfiles_copy_prompt "$SOURCE_DIR" "$conf_dir" Preferences.sublime-settings
-}
-
 assert_command_available alacritty
 assert_command_available curl
 assert_command_available diff
@@ -195,7 +185,6 @@ assert_command_available tmux
 assert_command_available vim
 assert_command_available starship
 
-# check_optional_command subl
 check_optional_command exa
 check_optional_command bat
 
@@ -218,5 +207,4 @@ dotfiles_tmux
 dotfiles_starship
 dotfiles_alacritty
 dotfiles_vim
-dotfiles_subl
 dotfiles_showmessage Complete!

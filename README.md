@@ -6,7 +6,6 @@ Installs configuration for the following programs:
 * [tmux](https://github.com/tmux/tmux)
 * [alacritty](https://github.com/alacritty/alacritty)
 * [vim](https://www.vim.org/)
-* [sublime text 3](https://www.sublimetext.com/)
 
 Installs aliases for the following applications:
 
