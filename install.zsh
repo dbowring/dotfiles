@@ -73,29 +73,12 @@ dotfile_copy_template_prompt() {
     rm "$render_path"
 }
 
-dotfiles_clone_or_pull() {
-    name=$1
-    url=$2
-    gitdir=$3
-
-    if [[ -d $gitdir ]]; then
-        dotfiles_showmessage updating $name
-        git -C $gitdir pull
-    else
-        dotfiles_showmessage installing $name
-        mkdir -p "$gitdir"
-        git clone $url $gitdir
-    fi
-}
-
 dotfiles_zsh() {
 
     if [[ "$ZDOTDIR" != "$HOME/.config/zsh" ]]; then
         dotfiles_showmessage 'You need to set ZDOTDIR=$HOME/.config/zsh either in ~/.zshrc or /etc/zsh/zshenv'
         ZDOTDIR=$HOME/.config/zsh
     fi
-
-    dotfiles_clone_or_pull zgen https://github.com/tarjoilija/zgen.git "$ZGEN_DIR"
 
     dotfiles_showmessage Copying zsh config to $ZDOTDIR
 
