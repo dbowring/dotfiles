@@ -20,6 +20,7 @@ bind-key C-p previous-window
 bind-key C-n next-window
 
 bind-key -T copy-mode y send-keys -X copy-selection
+bind-key -T copy-mode-vi y send-keys -X copy-selection
 
 set-option -g prefix2 C-a
 set -g window-status-current-style bg=black,fg=green,bold
@@ -27,6 +28,7 @@ set -g status-right '#[fg=black]%Y-%m-%d #[fg=black,bold]%H:%M#[default]'
 set -g default-terminal screen-256color
 
 set -g default-shell ${ZSH_FULL_NAME}
+set-window-option -g mode-keys vi
 
 set-option -g display-time 4000
 set-option -g history-limit 50000
