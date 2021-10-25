@@ -23,3 +23,6 @@ bindkey '\e^?' custom-backward-delete-word
 # Configure plugin history-substring-search
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
+
+# Support delete key
+bindkey "^[[3~" delete-char
