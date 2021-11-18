@@ -22,3 +22,4 @@ export PATH
 
 export GPG_TTY=$(tty)
 
+export WORDCHARS='!#$%&()*;<=>?[]^{}~'

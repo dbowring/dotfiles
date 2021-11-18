@@ -9,16 +9,11 @@ bindkey '^[[1;3C' forward-word
 bindkey  "^[[1~"   beginning-of-line
 bindkey  "^[[4~"   end-of-line
 
-# Custom word deletion
-custom-backward-delete-word () {
-   local WORDCHARS='!#$%&()*;<=>?[]^{}~'
-   zle backward-delete-word
-}
-zle -N custom-backward-delete-word
 # (ctrl|alt)+delete
-bindkey '^[^?' custom-backward-delete-word
-bindkey '^H' custom-backward-delete-word
-bindkey '\e^?' custom-backward-delete-word
+bindkey '^[^?' backward-delete-word
+bindkey '^H' backward-delete-word
+bindkey '\e^?' backward-delete-word
+bindkey '^[^?' backward-delete-word
 
 # Configure plugin history-substring-search
 bindkey '^[[A' history-substring-search-up
