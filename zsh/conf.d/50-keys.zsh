@@ -8,6 +8,8 @@ bindkey '^[[1;3C' forward-word
 # Home/end
 bindkey  "^[[1~"   beginning-of-line
 bindkey  "^[[4~"   end-of-line
+# Delete
+bindkey "^[[3~" delete-char
 
 # (ctrl|alt)+delete
 bindkey '^[^?' backward-delete-word
