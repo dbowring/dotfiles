@@ -7,3 +7,7 @@ fi
 if (command -v bat > /dev/null); then
     alias cat=bat
 fi
+
+if (command -v vopono > /dev/null); then
+    alias withvpn='vopono exec --provider mullvad --server ${MULLVAD_SERVER_REGION:-usa}'
+fi
