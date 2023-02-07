@@ -171,7 +171,7 @@ assert_command_available starship
 check_optional_command exa
 check_optional_command bat
 
-assert_font_available 'Fira Code:style=Regular'
+assert_font_available 'Iosevka Term:style=Regular'
 
 
 INSTALL_SCRIPT_PATH=$0:A
