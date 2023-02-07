@@ -8,6 +8,8 @@ export XDG_DATA_HOME=$HOME/.local/share
 export XDG_DATA_DIRS=/usr/local/share:/usr/share
 export XDG_CONFIG_DIRS=/etc/xdg
 
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+
 export HISTSIZE=1000
 export SAVEHIST=1000
 export HISTFILE=$XDG_DATA_HOME/zsh_history
