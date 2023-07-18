@@ -1,0 +1,13 @@
+
+# notifications
+exec_always --no-startup-id /usr/bin/dunst -config ~/.config/dunst/dunstrc
+
+#                       border          background      text
+client.focused          $COLOR_GREY     $COLOR_BLACK    $COLOR_PURPLE
+client.unfocused        $COLOR_GREY     $COLOR_BLACK    $COLOR_GREY
+client.focused_inactive $COLOR_GREY     $COLOR_BLACK    $COLOR_GREY
+client.urgent           $COLOR_GREY     $COLOR_RED      $COLOR_WHITE
+
+focus_follows_mouse no
+mouse_warping none
+

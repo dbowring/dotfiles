@@ -49,6 +49,29 @@ dotfiles_copy_prompt() {
     fi
 }
 
+dotfiles_copy_dir_prompt() {
+    indir=$1
+    outdir=$2
+
+    if [[ ! -d "$outdir" ]]; then
+        mkdir -p $outdir
+        cp -a "$indir/." "$outdir"
+    else
+        for p in $(find "$indir" -type f | sort); do
+            rp=$(realpath --relative-to="$indir" "$p")
+            outpath="$outdir/$rp"
+            current_outdir=$(dirname "$outpath")
+
+            if [[ ! -d "$current_outdir" ]]; then
+                mkdir -p "$current_outdir"
+            fi
+
+            dotfiles_copy_prompt "$indir" "$outdir" "$rp"
+
+        done
+    fi
+}
+
 dotfile_copy_template_prompt() {
     indir=$1
     outdir=$2
@@ -133,7 +156,6 @@ dotfiles_alacritty() {
     fi
 
     dotfile_copy_template_prompt "$SOURCE_DIR" "$conf_dir" alacritty.yml
-
 }
 
 dotfiles_vim() {
@@ -154,6 +176,16 @@ dotfiles_vim() {
     dotfiles_copy_prompt "$SOURCE_DIR" "$conf_dir" vimrc
     dotfiles_showmessage Installing vim plugins...
     vim +PlugInstall +qall
+}
+
+dotfiles_i3() {
+    dotfiles_copy_dir_prompt "$SOURCE_DIR/i3" "$XDG_CONFIG_HOME/i3"
+    dotfiles_copy_dir_prompt "$SOURCE_DIR/i3status" "$XDG_CONFIG_HOME/i3status"
+}
+
+dotfiles_sway() {
+    dotfiles_copy_dir_prompt "$SOURCE_DIR/sway" "$XDG_CONFIG_HOME/sway"
+    dotfiles_copy_dir_prompt "$SOURCE_DIR/waybar" "$XDG_CONFIG_HOME/waybar"
 }
 
 assert_command_available alacritty
@@ -190,4 +222,6 @@ dotfiles_tmux
 dotfiles_starship
 dotfiles_alacritty
 dotfiles_vim
+dotfiles_i3
+dotfiles_sway
 dotfiles_showmessage Complete!

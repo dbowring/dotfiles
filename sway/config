@@ -1,0 +1,55 @@
+# Read `man 5 sway` for a complete reference.
+
+set $mod Mod4
+set $font pango:Iosevka Term monospace
+set $font_size 10
+
+set $COLOR_RED #ff6188
+set $COLOR_ORANGE #fc9867
+set $COLOR_YELLOW #ffd866
+set $COLOR_GREEN #a9dc76
+set $COLOR_BLUE #a9dc76
+set $COLOR_PURPLE #ab9df2
+set $COLOR_BLACK #2c292d
+set $COLOR_WHITE #fdf9f3
+set $COLOR_GREY #908e8f
+
+
+set $ACTION_LOCK loginctl lock-session
+set $ACTION_EXIT swaymsg exit
+# set $menu dmenu_path | wmenu | xargs swaymsg exec --
+set $ACTION_RUN_MENU wofi --show drun --allow-images --matching fuzzy
+set $ACTION_CYCLE_MENU exit 1
+set $ACTION_SAFE_EXIT swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+set $STATUS_COMMAND waybar
+
+include /etc/sway/config.d/*
+include "$HOME/.config/i3/shared/*"
+
+bar swaybar_command waybar
+
+# Screenshot
+bindsym $mod+Shift+o exec sh -c 'grim -g "$(slurp)" - | swappy -f -'
+
+# Displays
+#output eDP-1 pos 0 0
+#output DP-2 pos 4816 0
+output eDP-1 pos 0 688 res 2256x1504
+output DP-5 pos 1128 0 res 2560x1440
+output DP-6 pos 3688 0 res 2560x1440
+bindswitch lid:on output eDP-1 disable
+bindswitch lid:off output eDP-1 enable
+
+input 'Logitech G502 HERO Gaming Mouse' {
+    accel_profile "flat"
+    pointer_accel 0.5
+}
+
+### Idle configuration
+exec swayidle -w \
+         timeout 300 'swaylock -f -c 000000' \
+         timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+         before-sleep 'swaylock -f -c 000000'
+# This will lock your screen after 300 seconds of inactivity, then turn off
+# your displays after another 300 seconds, and turn your screens back on when
+# resumed. It will also lock your screen before your computer goes to sleep.

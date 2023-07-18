@@ -1,0 +1,28 @@
+# https://github.com/ValveSoftware/steam-for-linux/issues/1040
+#for_window [class="^Steam$" title="^Friends$"] floating enable
+#for_window [class="^Steam$" title="Steam - News"] floating enable
+#for_window [class="^Steam$" title=".* - Chat"] floating enable
+#for_window [class="^Steam$" title="^Settings$"] floating enable
+#for_window [class="^Steam$" title=".* - event started"] floating enable
+#for_window [class="^Steam$" title=".* CD key"] floating enable
+#for_window [class="^Steam$" title="^Steam - Self Updater$"] floating enable
+#for_window [class="^Steam$" title="^Screenshot Uploader$"] floating enable
+#for_window [class="^Steam$" title="^Steam Guard - Computer Authorization Required$"] floating enable
+#for_window [title="^Steam Keyboard$"] floating enable
+
+# Discord
+assign [title="(^[#@].+ - )?Discord$"] $ws10
+for_window [title="(^[#@].+ - )?Discord$"] border pixel 0
+
+# Firefox
+for_window [title="^(.+ - )?Mozilla Firefox$"] border pixel 0
+
+# Editors
+for_window [title="- Sublime Text$"] border pixel 0
+for_window [title="- Visual Studio Code$"] border pixel 0
+
+for_window [title="^Skyrim Special Edition$"] border pixel 0
+
+# YoutubeMusic PWA
+assign [class="Chromium" title="(.+ - )?YouTube Music$"] $ws9
+for_window [class="Chromium" title="(.+ - )?YouTube Music$"] border pixel 0
