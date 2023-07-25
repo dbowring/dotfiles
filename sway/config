@@ -39,6 +39,8 @@ output DP-5 pos 1128 0 res 2560x1440
 output DP-6 pos 3688 0 res 2560x1440
 bindswitch lid:on output eDP-1 disable
 bindswitch lid:off output eDP-1 enable
+bindsym $mod+i output eDP-1 enable
+bindsym $mod+Shift+i output eDP-1 disable
 
 input 'Logitech G502 HERO Gaming Mouse' {
     accel_profile "flat"
