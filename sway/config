@@ -26,32 +26,30 @@ set $STATUS_COMMAND waybar
 include /etc/sway/config.d/*
 include "$HOME/.config/i3/shared/*"
 
-bar swaybar_command waybar
-
 # Screenshot
 bindsym $mod+Shift+o exec sh -c 'grim -g "$(slurp)" - | swappy -f -'
 
-# Displays
-#output eDP-1 pos 0 0
-#output DP-2 pos 4816 0
-output eDP-1 pos 0 688 res 2256x1504
-output DP-5 pos 1128 0 res 2560x1440
-output DP-6 pos 3688 0 res 2560x1440
+# Displays, mostly managed by kanshi
 bindswitch lid:on output eDP-1 disable
 bindswitch lid:off output eDP-1 enable
-bindsym $mod+i output eDP-1 enable
-bindsym $mod+Shift+i output eDP-1 disable
+
+set $mode_displays Displays (o)ffice, (r)oaming or (h)ome. integrated o(n)/o(f)f. (s)ync
+mode "$mode_displays" {
+    bindsym o exec --no-startup-id kanshictl switch office, mode "default"
+    bindsym r exec --no-startup-id kanshictl switch roaming, mode "default"
+    bindsym h exec --no-startup-id kanshictl switch home, mode "default"
+    bindsym n output 'BOE 0x0BCA Unknown' enable, mode "default"
+    bindsym f output 'BOE 0x0BCA Unknown' disable, mode "default"
+    bindsym s exec --no-startup-id kanshictl reload, mode "default"
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+Shift+i mode "$mode_displays"
 
 input 'Logitech G502 HERO Gaming Mouse' {
     accel_profile "flat"
     pointer_accel 0.5
 }
 
-### Idle configuration
-exec swayidle -w \
-         timeout 300 $ACTION_LOCK \
-         timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-         before-sleep $ACTION_LOCK
-# This will lock your screen after 300 seconds of inactivity, then turn off
-# your displays after another 300 seconds, and turn your screens back on when
-# resumed. It will also lock your screen before your computer goes to sleep.
+exec "systemctl --user import-environment {,WAYLAND_}DISPLAY SWAYSOCK; systemctl --user start sway-session.target"

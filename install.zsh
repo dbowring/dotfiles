@@ -186,7 +186,13 @@ dotfiles_i3() {
 dotfiles_sway() {
     dotfiles_copy_dir_prompt "$SOURCE_DIR/sway" "$XDG_CONFIG_HOME/sway"
     dotfiles_copy_dir_prompt "$SOURCE_DIR/waybar" "$XDG_CONFIG_HOME/waybar"
+    dotfiles_copy_dir_prompt "$SOURCE_DIR/kanshi" "$XDG_CONFIG_HOME/kanshi"
 }
+
+dotfiles_systemd() {
+    dotfiles_copy_dir_prompt "$SOURCE_DIR/systemd" "$XDG_CONFIG_HOME/systemd/user/"
+}
+
 
 assert_command_available alacritty
 assert_command_available curl
@@ -224,4 +230,5 @@ dotfiles_alacritty
 dotfiles_vim
 dotfiles_i3
 dotfiles_sway
+dotfiles_systemd
 dotfiles_showmessage Complete!

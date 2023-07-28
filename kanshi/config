@@ -1,0 +1,15 @@
+profile office {
+    output "Samsung Electric Company LS27A600U HNMW300511" mode 2560x1440 position 0,0
+    output "Samsung Electric Company LS27A600U HNMW300630" mode 2560x1440 position 2560,0
+    output "BOE 0x0BCA Unknown" mode 2256x1504 position 5120,0
+}
+
+profile roaming {
+    output "BOE 0x0BCA Unknown" mode 2256x1504 position 0,0
+}
+
+profile home {
+    output "ASUSTek COMPUTER INC VG259 KBLMQS027968" mode 1920x1080@143.614Hz position 0,0
+    output "ASUSTek COMPUTER INC VG259 KBLMQS027952" mode 1920x1080@143.614Hz position 1920,0
+    output "BOE 0x0BCA Unknown" mode 2256x1504 position 3840,0
+}

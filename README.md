@@ -32,3 +32,9 @@ your system.
 ```zsh
 zsh install.zsh
 ```
+
+```zsh
+systemctl --user enable sway-idle
+systemctl --user enable waybar
+systemctl --user enable kanshi
+```
