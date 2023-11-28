@@ -20,6 +20,9 @@ export VIMINIT='exe "source" "$XDG_CONFIG_HOME/vim/vimrc"'
 export RUSTUP_HOME=$XDG_DATA_HOME/rustup
 export CARGO_HOME=$XDG_DATA_HOME/cargo
 path+=($CARGO_HOME/bin)
+
+path+=(/opt/terraform/bin)
+
 export PATH
 
 export GPG_TTY=$(tty)
