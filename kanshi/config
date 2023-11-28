@@ -1,15 +1,23 @@
-profile office {
-    output "Samsung Electric Company LS27A600U HNMW300511" mode 2560x1440 position 0,0
-    output "Samsung Electric Company LS27A600U HNMW300630" mode 2560x1440 position 2560,0
-    output "BOE 0x0BCA Unknown" mode 2256x1504 position 5120,0
+profile roaming {
+    output eDP-1 mode 2256x1504 position 0,0 scale 1.5
 }
 
-profile roaming {
-    output "BOE 0x0BCA Unknown" mode 2256x1504 position 0,0
+profile office {
+    output "Samsung Electric Company LS27A600U HNMW300511" mode 2560x1440@74.998Hz position 0,0
+    output "Samsung Electric Company LS27A600U HNMW300630" mode 2560x1440@74.998Hz position 2560,0
+    # output "BOE 0x0BCA Unknown" mode 2256x1504 position 5120,0 scale 1
+    output eDP-1 disable
 }
 
 profile home {
-    output "ASUSTek COMPUTER INC VG259 KBLMQS027968" mode 1920x1080@143.614Hz position 0,0
-    output "ASUSTek COMPUTER INC VG259 KBLMQS027952" mode 1920x1080@143.614Hz position 1920,0
-    output "BOE 0x0BCA Unknown" mode 2256x1504 position 3840,0
+    output "ASUSTek COMPUTER INC VG259 KBLMQS027968" mode 1920x1080@143.614Hz position 3424,0
+    output "ASUSTek COMPUTER INC VG259 KBLMQS027952" mode 1920x1080@143.614Hz position 1504,0
+    output eDP-1 mode 2256x1504 position 0,77 scale 1.5
+}
+
+profile homeoffice {
+    output "Samsung Electric Company LS27A600U HNMW300322" mode 2560x1440@74.998Hz position 0,0
+    output "Samsung Electric Company LS27A600U HNMW300610"mode 2560x1440@74.998Hz position 2560,0
+    # output "BOE 0x0BCA Unknown" mode 2256x1504 position 5120,0 scale 1
+    output eDP-1 disable
 }
