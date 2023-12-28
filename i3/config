@@ -44,7 +44,7 @@ bindsym $mod+Shift+p "xrandr --output DP-2 --mode 1920x1080 --pos 0x0 --rate 144
 bar {
     status_command i3status
     font $font 12
-    tray_output DP-2
+    tray_output primary
     position bottom
 
     colors {
