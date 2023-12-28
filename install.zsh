@@ -155,7 +155,7 @@ dotfiles_alacritty() {
         mkdir -p "$conf_dir"
     fi
 
-    dotfile_copy_template_prompt "$SOURCE_DIR" "$conf_dir" alacritty.yml
+    dotfile_copy_template_prompt "$SOURCE_DIR" "$conf_dir" alacritty.toml
 }
 
 dotfiles_vim() {

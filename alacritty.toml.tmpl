@@ -1,0 +1,58 @@
+live_config_reload = true
+working_directory = "$HOME"
+
+[colors.bright]
+black = "#727072"
+blue = "#FC9867"
+cyan = "#78DCE8"
+green = "#A9DC76"
+magenta = "#AB9DF2"
+red = "#FF6188"
+white = "#FCFCFA"
+yellow = "#FFD866"
+
+[colors.normal]
+black = "#403E41"
+blue = "#FC9867"
+cyan = "#78DCE8"
+green = "#A9DC76"
+magenta = "#AB9DF2"
+red = "#FF6188"
+white = "#FCFCFA"
+yellow = "#FFD866"
+
+[colors.primary]
+background = "#2D2A2E"
+foreground = "#FCFCFA"
+
+[cursor]
+style = "Block"
+unfocused_hollow = true
+
+[font]
+size = $ALACRITTY_FONT_SIZE
+
+[font.bold]
+family = "Iosevka Term"
+style = "Bold"
+
+[font.italic]
+family = "Iosevka Term"
+style = "Italic"
+
+[font.normal]
+family = "Iosevka Term"
+style = "Regular"
+
+[scrolling]
+history = 0
+
+[selection]
+save_to_clipboard = true
+
+[shell]
+args = ["-u", "new", "-A", "-s", "$TMUX_SESSION_NAME"]
+program = "$TMUX_FULL_NAME"
+
+[window]
+decorations = "none"
