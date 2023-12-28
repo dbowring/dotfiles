@@ -1,4 +1,3 @@
-
 local _plugins=()
 
 if command -v brew > /dev/null; then

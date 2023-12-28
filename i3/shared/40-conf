@@ -10,4 +10,3 @@ client.urgent           $COLOR_GREY     $COLOR_RED      $COLOR_WHITE
 
 focus_follows_mouse no
 mouse_warping none
-
