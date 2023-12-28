@@ -34,7 +34,10 @@ bindsym $mod+Shift+o exec sh -c 'grim -g "$(slurp)" - | swappy -f -'
 # bindswitch --reload lid:off output eDP-1 enable
 bindswitch --reload lid:on exec --no-startup-id kanshictl reload
 bindswitch --reload lid:off exec --no-startup-id kanshictl reload
+bindsym $mod+Shift+k exec --no-startup-id kanshictl reload
 bindsym --locked $mod+Shift+k exec --no-startup-id kanshictl reload
+bindsym $mod+Shift+p output * enable power on
+bindsym --locked $mod+Shift+p output * enable power on
 
 
 # set $mode_displays Displays (o)ffice, (r)oaming or (h)ome. integrated o(n)/o(f)f. (s)ync

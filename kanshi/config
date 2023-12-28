@@ -1,26 +1,31 @@
 profile roaming {
     exec swaymsg 'output * power on'
-    output eDP-1 mode 2256x1504 position 0,0 scale 1
+    output "BOE 0x0BCA Unknown" mode 2256x1504 position 0,0 scale 1
 }
 
 profile office {
-    exec swaymsg 'output * power on'
+    exec swaymsg 'output "Samsung Electric Company LS27A600U HNMW300511" power on'
+    exec swaymsg 'output "Samsung Electric Company LS27A600U HNMW300630" power on'
+    exec swaymsg 'output "BOE 0x0BCA Unknown" power off'
     output "Samsung Electric Company LS27A600U HNMW300511" mode 2560x1440@74.998Hz position 0,0
     output "Samsung Electric Company LS27A600U HNMW300630" mode 2560x1440@74.998Hz position 2560,0
-    # output "BOE 0x0BCA Unknown" mode 2256x1504 position 5120,0 scale 1
-    output eDP-1 disable
+    output "BOE 0x0BCA Unknown" disable
 }
 
 profile home {
-    exec swaymsg 'output * power on'
+    exec swaymsg 'output "ASUSTek COMPUTER INC VG259 KBLMQS027968 power on'
+    exec swaymsg 'output "ASUSTek COMPUTER INC VG259 KBLMQS027952" power on'
+    exec swaymsg 'output "BOE 0x0BCA Unknown" power off'
     output "ASUSTek COMPUTER INC VG259 KBLMQS027968" mode 1920x1080@143.614Hz position 3424,0
     output "ASUSTek COMPUTER INC VG259 KBLMQS027952" mode 1920x1080@143.614Hz position 1504,0
-    output eDP-1 mode 2256x1504 position 0,77 scale 1
+    output "BOE 0x0BCA Unknown" mode 2256x1504 position 0,77 scale 1
 }
 
 profile homeoffice {
-    exec swaymsg 'output * power on'
-    output "Samsung Electric Company LS27A600U HNMW300322" enable mode 2560x1440@74.998Hz position 0,0 scale 1
-    output "Samsung Electric Company LS27A600U HNMW300610" enable mode 2560x1440@74.998Hz position 2560,0
-    output "BOE 0x0BCA Unknown" enable mode 2256x1504 position 5120,0 scale 1
+    exec swaymsg 'output "Samsung Electric Company LS27A600U HNMW300322" power on'
+    exec swaymsg 'output "Samsung Electric Company LS27A600U HNMW300610" power on'
+    exec swaymsg 'output "BOE 0x0BCA Unknown" power off'
+    output "Samsung Electric Company LS27A600U HNMW300322" enable mode 2560x1440@74.998Hz position 2256,0 scale 1
+    output "Samsung Electric Company LS27A600U HNMW300610" enable mode 2560x1440@74.998Hz position 4816,0 scale 1
+    output "BOE 0x0BCA Unknown" disable mode 2256x1504 position 0,0 scale 1
 }
