@@ -27,7 +27,8 @@ include /etc/sway/config.d/*
 include "$HOME/.config/i3/shared/*"
 
 # Screenshot
-bindsym $mod+Shift+o exec sh -c 'grim -g "$(slurp)" - | swappy -f -'
+bindsym $mod+Shift+o exec  ~/.config/sway/binds/capture-region.sh
+bindsym $mod+Shift+i exec ~/.config/sway/binds/capture-display.sh
 
 # Displays, mostly managed by kanshi
 # bindswitch --reload lid:on output eDP-1 disable
