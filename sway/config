@@ -61,3 +61,4 @@ input 'Logitech G502 HERO Gaming Mouse' {
 }
 
 exec "systemctl --user import-environment {,WAYLAND_}DISPLAY SWAYSOCK; systemctl --user start sway-session.target"
+exec --no-startup-id waybar
