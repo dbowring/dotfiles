@@ -77,7 +77,7 @@
     }
   },
   "clock#ph": {
-    "format": "{:%Y-%m-%d %H:%M} PhST",
+    "format": "{:%H:%M} PhST",
     "timezone": "Asia/Manila",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "calendar": {
