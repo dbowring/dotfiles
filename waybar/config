@@ -15,8 +15,8 @@
     "temperature",
     "battery",
     "tray",
-    "clock",
-    "clock#ph"
+    "clock#ph",
+    "clock"
   ],
   "sway/workspaces": {
     "disable-scroll": false
