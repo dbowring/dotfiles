@@ -10,4 +10,3 @@ paccache -ruk0
 pacman -Qdtq | ifne chronic sudo pacman -Rns -
 # Remove orphan packages, including cyclic dependencies
 pacman -Qqd | ifne chronic sudo pacman -Rsu -
-

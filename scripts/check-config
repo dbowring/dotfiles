@@ -14,4 +14,3 @@ if [[ -f "$HOME/.vimrc" ]]; then
     echo >&2 If you want to keep it, move it to $XDG_CONFIG_HOME/vim/vimrc
     exit 1
 fi
-
