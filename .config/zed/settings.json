@@ -19,6 +19,7 @@
     // Disable ligatures
     "calt": false
   },
+  "show_whitespaces": "all",
   "theme": {
     "mode": "dark",
     "light": "One Light",
