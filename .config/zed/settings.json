@@ -33,5 +33,6 @@
   },
   "auto_install_extensions": {
     "zedokai": true
-  }
+  },
+  "wrap_guides": [79, 80, 88, 100]
 }
