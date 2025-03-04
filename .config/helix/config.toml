@@ -1,0 +1,21 @@
+theme = "monokai_pro_machine"
+
+[editor]
+line-number = "relative"
+rulers = [79, 80, 88, 100]
+bufferline = "always"
+auto-pairs = false
+
+[editor.file-picker]
+hidden = false
+
+[editor.whitespace.render]
+space = "all"
+tab = "all"
+nbsp = "none"
+nnbsp = "none"
+newline = "none"
+
+[editor.indent-guides]
+render = true
+
