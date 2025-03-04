@@ -7,6 +7,6 @@ paccache -rk1
 paccache -ruk0
 
 # Remove orphan packages
-pacman -Qdtq | ifne chronic sudo pacman -Rns -
+pacman -Qdtq | ifne sudo pacman -Rns -
 # Remove orphan packages, including cyclic dependencies
-pacman -Qqd | ifne chronic sudo pacman -Rsu -
+pacman -Qqd | ifne sudo pacman -Rsu -
