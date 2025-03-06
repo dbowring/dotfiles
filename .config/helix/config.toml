@@ -19,3 +19,6 @@ newline = "none"
 [editor.indent-guides]
 render = true
 
+[keys.normal]
+Z = { Z = ":wq" }
+
