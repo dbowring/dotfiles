@@ -1,0 +1,6 @@
+@import url("file:///etc/xdg/waybar/style.css");
+
+#custom-notification {
+  font-family: "Iosevka Nerd Font";
+  min-width: 1.2em;
+}
