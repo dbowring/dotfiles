@@ -5,6 +5,11 @@ line-number = "relative"
 rulers = [79, 80, 88, 100]
 bufferline = "always"
 auto-pairs = false
+cursorline = true
+
+[editor.lsp]
+# Too often in the way, moved to a keyboard shortcut
+auto-signature-help = false
 
 [editor.file-picker]
 hidden = false
@@ -19,6 +24,13 @@ newline = "none"
 [editor.indent-guides]
 render = true
 
+[keys.insert]
+C-space = "signature_help"
+
 [keys.normal]
 Z = { Z = ":wq" }
-space = { q = ":buffer-close" }
+# ret = "goto_word"
+
+[keys.normal.space]
+q = ":buffer-close"
+o = "file_picker_in_current_buffer_directory"
