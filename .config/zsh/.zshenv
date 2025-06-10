@@ -14,7 +14,7 @@ export HISTSIZE=1000
 export SAVEHIST=1000
 export HISTFILE=$XDG_DATA_HOME/zsh_history
 
-export EDITOR=$(command -v vim)
+export EDITOR=$(command -v helix)
 export VIMINIT='exe "source" "$XDG_CONFIG_HOME/vim/vimrc"'
 
 export RUSTUP_HOME=$XDG_DATA_HOME/rustup
