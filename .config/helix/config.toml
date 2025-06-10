@@ -38,3 +38,11 @@ C-space = "signature_help"
 q = ":buffer-close"
 Q = ":buffer-close!"
 o = "file_picker_in_current_buffer_directory"
+
+[keys.normal."\\"]
+p = "@ghecpick<esc>"
+r = "@ghecreword<esc>"
+e = "@ghecedit<esc>"
+s = "@ghecsquash<esc>"
+f = "@ghecfixup<esc>"
+d = "@ghecdrop<esc>"
