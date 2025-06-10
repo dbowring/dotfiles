@@ -6,6 +6,7 @@ rulers = [79, 80, 88, 100]
 bufferline = "always"
 auto-pairs = false
 cursorline = true
+insert-final-newline = true
 
 [editor.lsp]
 # Too often in the way, moved to a keyboard shortcut
