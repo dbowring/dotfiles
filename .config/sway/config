@@ -14,7 +14,6 @@ set $COLOR_BLACK #2c292d
 set $COLOR_WHITE #fdf9f3
 set $COLOR_GREY #908e8f
 
-
 set $ACTION_LOCK 'swaylock -f -c 403E41'
 set $ACTION_EXIT swaymsg exit
 # set $menu dmenu_path | wmenu | xargs swaymsg exec --
@@ -25,35 +24,6 @@ set $STATUS_COMMAND waybar
 
 include /etc/sway/config.d/*
 include "$HOME/.config/sway/conf.d/*"
-
-# Screenshot
-bindsym $mod+Shift+o exec  ~/.config/sway/binds/capture-region.sh
-bindsym $mod+Shift+i exec ~/.config/sway/binds/capture-display.sh
-
-# Displays, mostly managed by kanshi
-# bindswitch --reload lid:on output eDP-1 disable
-# bindswitch --reload lid:off output eDP-1 enable
-bindswitch --reload lid:on exec --no-startup-id kanshictl reload
-bindswitch --reload lid:off exec --no-startup-id kanshictl reload
-bindsym $mod+Shift+k exec --no-startup-id kanshictl reload
-bindsym --locked $mod+Shift+k exec --no-startup-id kanshictl reload
-bindsym $mod+Shift+p output * enable power on
-bindsym --locked $mod+Shift+p output * enable power on
-
-
-# set $mode_displays Displays (o)ffice, (r)oaming or (h)ome. integrated o(n)/o(f)f. (s)ync
-# mode "$mode_displays" {
-#     bindsym o exec --no-startup-id kanshictl switch office, mode "default"
-#     bindsym r exec --no-startup-id kanshictl switch roaming, mode "default"
-#     bindsym h exec --no-startup-id kanshictl switch home, mode "default"
-#     bindsym n output 'BOE 0x0BCA Unknown' enable, mode "default"
-#     bindsym f output 'BOE 0x0BCA Unknown' disable, mode "default"
-#     bindsym s exec --no-startup-id kanshictl reload, mode "default"
-#     # back to normal: Enter or Escape
-#     bindsym Return mode "default"
-#     bindsym Escape mode "default"
-# }
-# bindsym $mod+Shift+i mode "$mode_displays"
 
 input 'Logitech G502 HERO Gaming Mouse' {
     accel_profile "flat"

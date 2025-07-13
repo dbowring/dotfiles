@@ -1,7 +1,4 @@
 
-# notifications
-exec_always --no-startup-id /usr/bin/dunst -config ~/.config/dunst/dunstrc
-
 # Power controls
 set $mode_system System (l)ock, (e) logout, (r)eboot, (S)hutdown
 mode "$mode_system" {
@@ -171,21 +168,16 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-set $COLOR_RED #ff6188
-set $COLOR_ORANGE #fc9867
-set $COLOR_YELLOW #ffd866
-set $COLOR_GREEN #a9dc76
-set $COLOR_BLUE #a9dc76
-set $COLOR_PURPLE #ab9df2
-set $COLOR_BLACK #2c292d
-set $COLOR_WHITE #fdf9f3
-set $COLOR_GREY #908e8f
+# Screenshot
+bindsym $mod+Shift+o exec  ~/scripts/capture-region.sh
+bindsym $mod+Shift+i exec ~/scripts/capture-display.sh
 
-#                       border          background      text
-client.focused          $COLOR_GREY     $COLOR_BLACK    $COLOR_PURPLE
-client.unfocused        $COLOR_GREY     $COLOR_BLACK    $COLOR_GREY
-client.focused_inactive $COLOR_GREY     $COLOR_BLACK    $COLOR_GREY
-client.urgent           $COLOR_GREY     $COLOR_RED      $COLOR_WHITE
-
-focus_follows_mouse no
-mouse_warping none
+# Displays, mostly managed by kanshi
+# bindswitch --reload lid:on output eDP-1 disable
+# bindswitch --reload lid:off output eDP-1 enable
+bindswitch --reload lid:on exec --no-startup-id kanshictl reload
+bindswitch --reload lid:off exec --no-startup-id kanshictl reload
+bindsym $mod+Shift+k exec --no-startup-id kanshictl reload
+bindsym --locked $mod+Shift+k exec --no-startup-id kanshictl reload
+bindsym $mod+Shift+p output * enable power on
+bindsym --locked $mod+Shift+p output * enable power on
