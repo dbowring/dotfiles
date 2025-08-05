@@ -1,6 +1,6 @@
-# https://github.com/ogham/exa
-if (command -v exa > /dev/null); then
-    alias ls=exa
+# https://github.com/eza-community/eza
+if (command -v eza > /dev/null); then
+    alias ls=eza
 fi
 
 # https://github.com/sharkdp/bat
