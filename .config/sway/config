@@ -17,7 +17,8 @@ set $COLOR_GREY #908e8f
 set $ACTION_LOCK 'swaylock -f -c 403E41'
 set $ACTION_EXIT swaymsg exit
 # set $menu dmenu_path | wmenu | xargs swaymsg exec --
-set $ACTION_RUN_MENU wofi --show drun --allow-images
+# set $ACTION_RUN_MENU wofi --show drun --allow-images
+set $ACTION_RUN_MENU fuzzel
 set $ACTION_CYCLE_MENU exit 1
 set $ACTION_SAFE_EXIT swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 set $STATUS_COMMAND waybar
