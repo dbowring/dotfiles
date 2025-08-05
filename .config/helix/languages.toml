@@ -1,9 +1,21 @@
 
 [[language]]
+# See: https://docs.helix-editor.com/languages.html#configuring-language-servers-for-a-language
 name = "python"
-language-servers = [
-    "basedpyright",
-    "ruff",
-    { name = "jedi", except-features = ["document-symbols", "workspace-symbols"] },
-    { name = "pylsp", except-features = ["document-symbols", "workspace-symbols"] }
+
+[[language.language-servers]]
+name = "ruff"
+
+[[language.language-servers]]
+name = "basedpyright"
+
+[[language.language-servers]]
+name = "jedi"
+except-features = [
+    "document-symbols", "workspace-symbols", "goto-definition", "goto-declaration", "goto-type-definition", "goto-reference", "goto-implementation", "format"
+]
+[[language.language-servers]]
+name = "pylsp"
+except-features = [
+    "document-symbols", "workspace-symbols", "goto-definition", "goto-declaration", "goto-type-definition", "goto-reference", "goto-implementation", "format"
 ]
