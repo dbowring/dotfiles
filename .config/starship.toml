@@ -3,6 +3,7 @@ add_newline = true
 format = """
 [>](bold blue) \
 $username\
+$directory\
 $battery\
 $jobs\
 $time\
