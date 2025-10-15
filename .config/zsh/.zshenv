@@ -21,9 +21,6 @@ export RUSTUP_HOME=$XDG_DATA_HOME/rustup
 export CARGO_HOME=$XDG_DATA_HOME/cargo
 path+=($CARGO_HOME/bin)
 
-export ANDROID_HOME=$HOME/Android/Sdk/
-path+=($ANDROID_HOME)
-
 path+=($HOME/scripts)
 
 export PATH
