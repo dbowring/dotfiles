@@ -19,3 +19,7 @@ name = "pylsp"
 except-features = [
     "document-symbols", "workspace-symbols", "goto-definition", "goto-declaration", "goto-type-definition", "goto-reference", "goto-implementation", "format"
 ]
+
+[[language]]
+name = "json"
+auto-format = false
