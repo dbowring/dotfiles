@@ -171,6 +171,7 @@ bindsym $mod+r mode "resize"
 # Screenshot
 bindsym $mod+Shift+o exec  ~/scripts/capture-region.sh
 bindsym $mod+Shift+i exec ~/scripts/capture-display.sh
+bindsym $mod+c exec hyprpicker --autocopy
 
 # Displays, mostly managed by kanshi
 # bindswitch --reload lid:on output eDP-1 disable
