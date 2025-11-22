@@ -8,5 +8,5 @@ client.unfocused        $COLOR_GREY     $COLOR_BLACK    $COLOR_GREY
 client.focused_inactive $COLOR_GREY     $COLOR_BLACK    $COLOR_GREY
 client.urgent           $COLOR_GREY     $COLOR_RED      $COLOR_WHITE
 
-focus_follows_mouse no
-mouse_warping none
+focus_follows_mouse yes
+mouse_warping output
