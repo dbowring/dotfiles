@@ -16,6 +16,13 @@ export GOPATH="$XDG_DATA_HOME/go"
 export LESSHISTFILE="$XDG_STATE_HOME/less/history"
 export WINEPREFIX="$XDG_DATA_HOME/wine"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
+export NODE_REPL_HISTORY="$XDG_DATA_HOME/node_repl_history"
+export NODENV_ROOT="$XDG_DATA_HOME/nodenv"
+export DOTNET_CLI_HOME="$XDG_DATA_HOME/dotnet"
+export GRADLE_USER_HOME="$XDG_DATA_HOME/gradle"
+export IPYTHONDIR="$XDG_CONFIG_HOME/ipython"
+export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME/jupyter"
+export PSQL_HISTORY="$XDG_DATA_HOME/psql_history"
 
 export HISTSIZE=1000
 export SAVEHIST=1000
