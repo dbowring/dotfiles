@@ -27,3 +27,10 @@ profile homeoffice {
     output "Samsung Electric Company LS27A600U HNMW300322" enable mode 2560x1440@74.998Hz position 4816,0 scale 1
     output "BOE 0x0BCA Unknown" disable mode 2256x1504 position 0,0 scale 1
 }
+
+profile spareoffice {
+    exec swaymsg 'output "GIGA-BYTE TECHNOLOGY CO., LTD. M28U 22100B014027" power on'
+    exec swaymsg 'output "BOE 0x0BCA Unknown" power off'
+    output "GIGA-BYTE TECHNOLOGY CO., LTD. M28U 22100B014027" enable mode 3840x2160@60Hz position 0,0 scale 1
+    output "BOE 0x0BCA Unknown" disable
+}
