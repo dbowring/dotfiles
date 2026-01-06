@@ -36,6 +36,7 @@ export CARGO_HOME=$XDG_DATA_HOME/cargo
 path+=($CARGO_HOME/bin)
 
 path+=($HOME/scripts)
+path+=($XDG_DATA_HOME/npm/bin/)
 
 export PATH
 
