@@ -21,8 +21,9 @@ bindsym $mod+Escape exec --no-startup-id $ACTION_LOCK
 floating_modifier $mod
 
 # start a terminal
-# bindsym $mod+Return exec alacritty
-bindsym $mod+Return exec foot
+bindsym $mod+Control+Return exec alacritty
+bindsym $mod+Shift+Return exec foot
+bindsym $mod+Return exec ghostty
 
 # kill focused window
 bindsym $mod+Shift+q kill
