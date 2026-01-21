@@ -23,6 +23,7 @@ export GRADLE_USER_HOME="$XDG_DATA_HOME/gradle"
 export IPYTHONDIR="$XDG_CONFIG_HOME/ipython"
 export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME/jupyter"
 export PSQL_HISTORY="$XDG_DATA_HOME/psql_history"
+export PYTHON_HISTORY="$XDG_STATE_HOME/python_history"
 
 export HISTSIZE=1000
 export SAVEHIST=1000
