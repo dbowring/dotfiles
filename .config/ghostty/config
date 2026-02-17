@@ -6,6 +6,7 @@
 
 font-family = "Iosevka Term"
 font-size = 12
+font-feature = "-calt, -liga, -dlig"
 
 command = direct:/usr/bin/tmux
 initial-command = direct:/usr/bin/tmux -u new -A -s main
