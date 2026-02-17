@@ -20,6 +20,9 @@ except-features = [
     "document-symbols", "workspace-symbols", "goto-definition", "goto-declaration", "goto-type-definition", "goto-reference", "goto-implementation", "format"
 ]
 
+[language-server.typescript-language-server]
+config = { preferences = { "importModuleSpecifierPreference" = "non-relative", "importModuleSpecifierEnding" = "auto"  } }
+
 [[language]]
 name = "json"
 auto-format = false
