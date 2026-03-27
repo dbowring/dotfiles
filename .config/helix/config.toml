@@ -28,6 +28,9 @@ render = false
 [editor.statusline]
 right = ["diagnostics", "selections", "register", "position", "primary-selection-length", "file-encoding"]
 
+[editor.search]
+smart-case = false
+
 [keys.insert]
 C-space = "signature_help"
 
