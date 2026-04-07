@@ -10,3 +10,5 @@ font-feature = "-calt, -liga, -dlig"
 
 command = direct:/usr/bin/tmux
 initial-command = direct:/usr/bin/tmux -u new -A -s main
+
+config-file = ?local-config
