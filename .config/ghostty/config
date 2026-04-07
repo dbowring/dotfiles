@@ -11,4 +11,6 @@ font-feature = "-calt, -liga, -dlig"
 command = direct:/usr/bin/tmux
 initial-command = direct:/usr/bin/tmux -u new -A -s main
 
+app-notifications = no-clipboard-copy,no-config-reload
+
 config-file = ?local-config
