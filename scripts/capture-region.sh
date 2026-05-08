@@ -1,3 +1,3 @@
 #!/bin/bash
 
-grim -g "$(slurp)" - | swappy -f -
+grim -g "$(slurp)" - | satty -f -
