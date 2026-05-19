@@ -172,6 +172,9 @@ bindsym $mod+r mode "resize"
 # Screenshot
 bindsym $mod+Shift+o exec  ~/scripts/capture-region.sh
 bindsym $mod+Shift+i exec ~/scripts/capture-display.sh
+# Scan QR codes
+bindsym $mod+Shift+u exec ~/scripts/scan-region.sh
+# Color picker
 bindsym $mod+c exec hyprpicker --autocopy
 
 # Displays, mostly managed by kanshi
