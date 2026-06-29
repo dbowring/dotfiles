@@ -30,3 +30,7 @@ error_symbol = "[λ](bold red)"
 [status]
 disabled = false
 symbol = "!"
+
+[hostname]
+ssh_only = false
+format = '[$ssh_symbol$hostname]($style) '
