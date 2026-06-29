@@ -26,3 +26,9 @@ for_window [title="^Skyrim Special Edition$"] border pixel 0
 # YoutubeMusic PWA
 assign [class="Chromium" title="(.+ - )?YouTube Music$"] $ws9
 for_window [class="Chromium" title="(.+ - )?YouTube Music$"] border pixel 0
+
+# Rustdesk has client side decorations already
+for_window [app_id="rustdesk"] border pixel 0
+
+# Satty / Screenshots
+for_window [app_id="com.gabm.satty"] floating enable
