@@ -1,0 +1,39 @@
+position = "Bottom"
+layer = "Top"
+enable_esc_key = true
+language = "en-US"
+region = "au-AU"
+
+[appearance]
+style = "Solid"
+font_name = "Iosevka Regular"
+scale_factor = 1.2
+
+[appearance.menu]
+backdrop = 0.3
+
+[osd]
+enabled = true
+
+[animations]
+enabled = true
+
+[modules]
+left = [ "Workspaces" ]
+center = [ "WindowTitle"]
+right = [ "Tray", "Notifications", [ "SystemInfo", "Privacy", "Settings", "Tempo" ] ]
+
+[workspaces]
+visibility_mode = "MonitorSpecific"
+# group_by_monitor = true
+workspace_names = [
+  "1", "2", "3", "4", "5", "6", "7", "8", "9", "10 - chat"
+]
+
+[tempo]
+weather_location = { City = "Sydney" }
+wind_speed_unit = "Kmh"
+
+[window_title]
+mode = "Title"
+truncate_title_after_length = 75
