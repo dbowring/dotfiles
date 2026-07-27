@@ -19,7 +19,7 @@ enabled = true
 enabled = true
 
 [modules]
-left = [ "Workspaces" ]
+left = [ "Workspaces", "Keyboard"]
 center = [ "WindowTitle"]
 right = [ "Tray", "Notifications", [ "SystemInfo", "Privacy", "Settings", "Tempo" ] ]
 
