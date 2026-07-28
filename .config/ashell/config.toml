@@ -21,7 +21,7 @@ enabled = true
 [modules]
 left = [ "Workspaces", "Keyboard"]
 center = [ "WindowTitle"]
-right = [ "Tray", "Notifications", [ "SystemInfo", "Privacy", "Settings", "Tempo" ] ]
+right = [ "Tray", "Notifications", [ "Tempo", "SystemInfo", "Privacy", "Settings" ] ]
 
 [workspaces]
 visibility_mode = "MonitorSpecific"
