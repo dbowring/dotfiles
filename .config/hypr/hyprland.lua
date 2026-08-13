@@ -380,6 +380,10 @@ hl.define_submap("power", function()
         hl.dispatch(hl.dsp.exit())
         hl.dispatch(hl.dsp.submap("reset"))
     end)
+    hl.bind("l", function()
+        hl.dispatch(hl.dsp.exec_cmd("loginctl lock-session"))
+        hl.dispatch(hl.dsp.submap("reset"))
+    end)
     hl.bind("escape", hl.dsp.submap("reset"))
 end)
 
@@ -434,3 +438,5 @@ hl.window_rule({
 })
 
 hl.window_rule({ match = { class = "cs2", fullscreen = true }, confine_pointer = true })
+-- Big walk
+hl.window_rule({ match = { class = "steam_app_1478500", fullscreen = true }, confine_pointer = true })
