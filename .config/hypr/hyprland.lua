@@ -445,6 +445,8 @@ hl.window_rule({ name="Big Walk", match = { class = "steam_app_1478500", fullscr
 hl.window_rule({ name="Slack", match={ class = "slack" }, workspace = "10" })
 hl.window_rule({ name="Discord", match={ class = "discord" }, workspace = "10" })
 hl.window_rule({ name="Signal", match={ class = "signal" }, workspace = "10" })
+hl.window_rule({ name="Steam", match={ class = "steam" }, workspace = "3" })
 
 hl.workspace_rule({ workspace = "1", monitor=leftDisplay, default=true, persistent=true })
+hl.workspace_rule({ workspace = "3", monitor=leftDisplay  })
 hl.workspace_rule({ workspace = "10", monitor=rightDisplay, default=true, persistent=true })
