@@ -31,14 +31,17 @@ local function lid_is_closed()
 end
 hl.monitor({ output = "eDP-1", disabled = lid_is_closed() })
 
+local leftDisplay = "desc:Samsung Electric Company LS27A600U HNMW300322"
+local rightDisplay = "desc:Samsung Electric Company LS27A600U HNMW300610"
+
 hl.monitor({
-    output = "desc:Samsung Electric Company LS27A600U HNMW300322",
+    output = leftDisplay,
     mode     = "2560x1440@74.99800",
     position = "0x0",
     scale    = "1",
 });
 hl.monitor({
-    output = "desc:Samsung Electric Company LS27A600U HNMW300610",
+    output = rightDisplay,
     mode     = "2560x1440@59.951",
     position = "2560x0",
     scale    = "1",
@@ -437,6 +440,11 @@ hl.window_rule({
     float = true,
 })
 
-hl.window_rule({ match = { class = "cs2", fullscreen = true }, confine_pointer = true })
--- Big walk
-hl.window_rule({ match = { class = "steam_app_1478500", fullscreen = true }, confine_pointer = true })
+hl.window_rule({ name="counter-strike 2", match = { class = "cs2", fullscreen = true }, confine_pointer = true })
+hl.window_rule({ name="Big Walk", match = { class = "steam_app_1478500", fullscreen = true }, confine_pointer = true })
+hl.window_rule({ name="Slack", match={ class = "slack" }, workspace = "10" })
+hl.window_rule({ name="Discord", match={ class = "discord" }, workspace = "10" })
+hl.window_rule({ name="Signal", match={ class = "signal" }, workspace = "10" })
+
+hl.workspace_rule({ workspace = "1", monitor=leftDisplay, default=true, persistent=true })
+hl.workspace_rule({ workspace = "10", monitor=rightDisplay, default=true, persistent=true })
