@@ -9,6 +9,9 @@ style = "Solid"
 font_name = "Iosevka Regular"
 scale_factor = 1.2
 
+[appearance.bar]
+surface = "solid"
+
 [appearance.menu]
 backdrop = 0.3
 
