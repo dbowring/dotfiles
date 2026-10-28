@@ -272,7 +272,7 @@ hl.config({
         kb_layout  = "us",
         kb_variant = "",
         kb_model   = "",
-        kb_options = "",
+        kb_options = "fkeys:basic_13-24",
         kb_rules   = "",
 
         follow_mouse = 1,
@@ -350,8 +350,10 @@ end
 -- Move/resize windows with mainMod + LMB/RMB and dragging
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
--- hl.bind("mouse:276", hl.dsp.pass({ window = "class:discord"}))
--- hl.bind("mouse:276", hl.dsp.pass({ window = "class:^wev$" }))
+hl.bind("mouse:276", hl.dsp.global("discord:discord-push-to-talk"))
+
+-- Screenshot
+hl.bind(mainMod .. " + O", hl.dsp.exec_cmd('grim - | satty -f - --copy-command wl-copy -o "~/Pictures/Screenshots/%Y%m%d_%H%M%S.png"'))
 
 -- Laptop multimedia keys for volume and LCD brightness
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"), { locked = true, repeating = true })
