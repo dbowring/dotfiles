@@ -29,7 +29,11 @@ local function lid_is_closed()
     f:close()
     return result:find("closed") ~= nil
 end
-hl.monitor({ output = "eDP-1", disabled = lid_is_closed() })
+hl.monitor({
+    output = "eDP-1",
+    disabled = lid_is_closed(),
+    scale = "1"
+})
 
 local leftDisplay = "desc:Samsung Electric Company LS27A600U HNMW300322"
 local rightDisplay = "desc:Samsung Electric Company LS27A600U HNMW300610"
